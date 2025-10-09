@@ -346,8 +346,8 @@ def main():
     drop_pos = get_body_pos("drop_bucket")  # Where to place object
     
     # ------------------------- TRAJECTORY PLANNING -------------------------
-    # Plan all trajectories before execution
-    # Each trajectory starts where the previous one ends
+    #Plan all trajectories before execution
+    #Each trajectory starts where the previous one ends
     
     # Trajectory 1: Move from home to above object
     height_above_obj = 0.05

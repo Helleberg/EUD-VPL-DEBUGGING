@@ -1,13 +1,32 @@
+# README
 
-# Inside the project folder
-# Remove old venv if present
-rm -rf venv
+## Quick start
 
-# Create a new one
+### 1. Download the project
+
+```bash
+# Clone or download the project
+cd path/to/mj_pick_and_place
+```
+
+### 2. Create virtual environment
+
+**Linux/Mac:**
+```bash
 python3 -m venv venv
-
-# Activate it
 source venv/bin/activate
+```
 
-# Install dependencies
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+
