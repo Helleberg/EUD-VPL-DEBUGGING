@@ -535,6 +535,47 @@ class RobotAPI:
         except Exception as e:
             return {"status": "error", "message": str(e)}
 
+    def reset_boxes(self):
+        """
+        Reset the positions and velocities of the movable boxes to defaults.
+
+        - red_box -> [0.3, 0.3, 0.52]
+        - blue_box -> [0.5, 0.3, 0.55]
+
+        Returns a status dictionary.
+        """
+        try:
+            def _reset_free_body(body_name, pos_xyz):
+                # Get body id
+                body_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, body_name)
+                # First joint for this body
+                jnt_adr = self.model.body_jntadr[body_id]
+                jnt_num = self.model.body_jntnum[body_id]
+                if jnt_num == 0:
+                    raise RuntimeError(f"Body '{body_name}' has no joint to reset")
+
+                j_id = jnt_adr  # assume first joint is the free joint
+                if self.model.jnt_type[j_id] != mujoco.mjtJoint.mjJNT_FREE:
+                    raise RuntimeError(f"Body '{body_name}' is not free (no free joint)")
+
+                qpos_adr = self.model.jnt_qposadr[j_id]
+                qvel_adr = self.model.jnt_dofadr[j_id]
+
+                # Set position (x,y,z) and identity quaternion (w,x,y,z) = (1,0,0,0)
+                self.data.qpos[qpos_adr:qpos_adr+7] = [pos_xyz[0], pos_xyz[1], pos_xyz[2], 1.0, 0.0, 0.0, 0.0]
+                # Zero linear and angular velocities
+                self.data.qvel[qvel_adr:qvel_adr+6] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+            with self.data_lock:
+                _reset_free_body("red_box", [0.3, 0.3, 0.52])
+                _reset_free_body("blue_box", [0.5, 0.3, 0.55])
+                # Recompute all dependent quantities
+                mujoco.mj_forward(self.model, self.data)
+
+            return {"status": "success", "message": "red_box and blue_box reset"}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
     def step_simulation(self):
         """
         This dvance the simulation by one timestep. IT IS THE MOST IMPORTANT METHOD !

@@ -1,0 +1,92 @@
+{
+    "missions": [
+        {
+            "mission_id": "initialize",
+            "actions": [
+                {
+                    "action": "initialize"
+                },
+                {
+                    "action": "reset_boxes"
+                }
+            ]
+        },
+        {
+            "mission_id": "pick_and_place_red_box",
+            "actions": [
+                {
+                    "action": "move_to_object",
+                    "object_name": "red_box",
+                    "height_offset": 0.05
+                },
+                {
+                    "action": "pick_object",
+                    "object_name": "red_box"
+                },
+                {
+                    "action": "move_to_position",
+                    "position": {
+                        "x": -0.5,
+                        "y": 0.3,
+                        "z": 0.6
+                    },
+                    "duration": 2.0
+                },
+                {
+                    "action": "release"
+                }
+            ]
+        },
+        {
+            "mission_id": "pick_and_place_blue_box",
+            "actions": [
+                {
+                    "action": "move_to_object",
+                    "object_name": "blue_box",
+                    "height_offset": 0.05
+                },
+                {
+                    "action": "pick_object",
+                    "object_name": "blue_box"
+                },
+                {
+                    "action": "move_to_position",
+                    "position": {
+                        "x": -0.5,
+                        "y": 0.3,
+                        "z": 0.6
+                    },
+                    "duration": 2.0
+                },
+                {
+                    "action": "release"
+                },
+                {
+                    "action": "move_to_position",
+                    "position": {
+                        "x": -0.5,
+                        "y": 0.3,
+                        "z": 0.8
+                    },
+                    "duration": 2.0
+                },
+                {
+                    "action": "move_to_position",
+                    "position": {
+                        "x": 0.4,
+                        "y": 0.3,
+                        "z": 0.8
+                    },
+                    "duration": 2.0
+                },
+                {
+                    "action": "wait",
+                    "seconds": 1.0
+                },
+                {
+                    "action": "grasp"
+                }
+            ]
+        }
+    ]
+}
