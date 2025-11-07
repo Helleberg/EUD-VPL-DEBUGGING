@@ -1,0 +1,25 @@
+<script type="text/javascript">
+RED.nodes.registerType('move to position', {
+    category: 'robot',
+    color: '#A6BBCF',
+    defaults: {
+        name: { value: "" },
+        x_coord: { value: 0 }, y_coord: { value: 0 }, z_coord: { value: 0 }, duration: { value: 1 }
+    },
+    inputs: 1,
+    outputs: 1,
+    
+    label: function() { return "move to position"; }
+});
+</script>
+
+<script type="text/html" data-template-name="move to position">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row"><label>x</label><input type="text" id="node-input-x_coord"></div>
+    <div class="form-row"><label>y</label><input type="text" id="node-input-y_coord"></div>
+    <div class="form-row"><label>z</label><input type="text" id="node-input-z_coord"></div>
+    <div class="form-row"><label>duration</label><input type="number" id="node-input-duration"></div>
+</script>

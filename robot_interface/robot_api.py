@@ -187,7 +187,7 @@ class RobotAPI:
                         viewer.sync()  #Update the display with latest data (Mjdata)
 
                     # Small delay needed
-                    import time
+                    import time #what was smoked
                     time.sleep(0.01)  # 10ms delay
 
                 #Cleanup when the viewer is closed
@@ -199,7 +199,7 @@ class RobotAPI:
         self.viewer_thread.start()
 
         #Give viewer the time to open window 
-        import time
+        import time #again
         time.sleep(0.5)
 
         return {"status": "success", "message": "Mujoco viewer is launched"}
@@ -504,7 +504,7 @@ class RobotAPI:
         robot.grasp()
         robot.wait(1.0)# for 1 second we wait for the gripper to close
         robot.move_to_position(0, 0, 0.8) """
-        import time
+        import time #and again
         time.sleep(float(seconds))
         return {"status": "success", "message": f"Waited {seconds}s"}
 

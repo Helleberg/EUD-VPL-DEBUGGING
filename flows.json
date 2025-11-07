@@ -1,0 +1,257 @@
+[
+    {
+        "id": "d103939ecea1f50a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9eb5dc55519d3d3f",
+        "type": "initialize",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 640,
+        "y": 300,
+        "wires": [
+            [
+                "365d69a905b00dfd"
+            ]
+        ]
+    },
+    {
+        "id": "00bfc79336df0f45",
+        "type": "inject",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "9eb5dc55519d3d3f"
+            ]
+        ]
+    },
+    {
+        "id": "a62f0fb74c9196c0",
+        "type": "grasp",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 1090,
+        "y": 400,
+        "wires": [
+            [
+                "69457ac60c566c3f"
+            ]
+        ]
+    },
+    {
+        "id": "cdfa48ed9e7fb654",
+        "type": "release",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 1480,
+        "y": 400,
+        "wires": [
+            [
+                "34964624232d8da3"
+            ]
+        ]
+    },
+    {
+        "id": "c27d36959f2b2fac",
+        "type": "initialize",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 500,
+        "y": 600,
+        "wires": [
+            [
+                "34964624232d8da3"
+            ]
+        ]
+    },
+    {
+        "id": "567d628a59e45cf3",
+        "type": "inject",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "c27d36959f2b2fac"
+            ]
+        ]
+    },
+    {
+        "id": "330d4730ce1ed9c5",
+        "type": "grasp",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 1010,
+        "y": 680,
+        "wires": [
+            [
+                "62986eb57ac46006"
+            ]
+        ]
+    },
+    {
+        "id": "07477dc793489e1d",
+        "type": "release",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 1460,
+        "y": 680,
+        "wires": [
+            [
+                "fc4cdb7e6ff8fcc6"
+            ]
+        ]
+    },
+    {
+        "id": "fc4cdb7e6ff8fcc6",
+        "type": "finish",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 1630,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "365d69a905b00dfd",
+        "type": "move to position",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x_coord": "-0.38",
+        "y_coord": "0.053",
+        "z_coord": "0.645",
+        "duration": "2",
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "a2dec8ea2396d778"
+            ]
+        ]
+    },
+    {
+        "id": "69457ac60c566c3f",
+        "type": "move to position",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x_coord": "0.7",
+        "y_coord": "0.45",
+        "z_coord": "0.81",
+        "duration": "2",
+        "x": 1280,
+        "y": 400,
+        "wires": [
+            [
+                "cdfa48ed9e7fb654"
+            ]
+        ]
+    },
+    {
+        "id": "a2dec8ea2396d778",
+        "type": "move to position",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x_coord": "-0.38",
+        "y_coord": "0.053",
+        "z_coord": "0.625",
+        "duration": "1",
+        "x": 900,
+        "y": 400,
+        "wires": [
+            [
+                "a62f0fb74c9196c0"
+            ]
+        ]
+    },
+    {
+        "id": "34964624232d8da3",
+        "type": "move to position",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x_coord": "0.405",
+        "y_coord": "0.042",
+        "z_coord": "0.645",
+        "duration": "3",
+        "x": 740,
+        "y": 600,
+        "wires": [
+            [
+                "b2216bebc354823f"
+            ]
+        ]
+    },
+    {
+        "id": "b2216bebc354823f",
+        "type": "move to position",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x_coord": "0.405",
+        "y_coord": "0.042",
+        "z_coord": "0.625",
+        "duration": 1,
+        "x": 820,
+        "y": 680,
+        "wires": [
+            [
+                "330d4730ce1ed9c5"
+            ]
+        ]
+    },
+    {
+        "id": "62986eb57ac46006",
+        "type": "move to position",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x_coord": "-0.7",
+        "y_coord": "-0.45",
+        "z_coord": "0.81",
+        "duration": "2",
+        "x": 1220,
+        "y": 680,
+        "wires": [
+            [
+                "07477dc793489e1d"
+            ]
+        ]
+    },
+    {
+        "id": "05a8d827293ec5ce",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-robot-actions": "1.0.0"
+        }
+    }
+]

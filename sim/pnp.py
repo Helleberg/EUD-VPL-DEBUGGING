@@ -37,26 +37,115 @@ def init() -> tuple[mj.MjModel, mj.MjData]:
     
     # Add red box (pickable object)
     # Position: [0.3m, 0.3m, 0.52m] :placed on the table
-    box_body = spec.worldbody.add_body(name="red_box", pos=[0.3, 0.3, 0.52])
-    box_body.add_geom(name="red_box", type=mj.mjtGeom.mjGEOM_BOX, 
-                     size=[0.025, 0.025, 0.025], rgba=[1,0,0,1])
-    box_body.add_freejoint()  # Makes object movable (6 DOF)
-
-    # Add blue box (alternative target)
-    box_body = spec.worldbody.add_body(name="blue_box", pos=[0.5, 0.3, 0.55])
-    box_body.add_geom(name="blue_box", type=mj.mjtGeom.mjGEOM_BOX, 
-                     size=[0.025, 0.025, 0.025], rgba=[0,0,1,1])
-    box_body.add_freejoint()
 
     # Add drop bucket (target location for placing objects)
     box_body = spec.worldbody.add_body(name="drop_bucket", pos=[-0.5, 0.3, 0.51])
-    box_body.add_geom(name="drop_bucket", type=mj.mjtGeom.mjGEOM_BOX, 
+    box_body.add_geom(name="drop_bucket", type=mj.mjtGeom.mjGEOM_BOX,
                      size=[0.1, 0.1, 0.005], rgba=[0.5,0.5,0.5,1])
 
     # Add table surface (static object)
-    box_body = spec.worldbody.add_body(name="table_top", pos=[0.0, 0.0, 0.5])
-    box_body.add_geom(name="table_top", type=mj.mjtGeom.mjGEOM_BOX, 
+    box_body = spec.worldbody.add_body(name="table_top", pos=[0.0, 0.0, 0.51])
+    box_body.add_geom(name="table_top", type=mj.mjtGeom.mjGEOM_BOX,
                      size=[0.8, 0.6, 0.01], rgba=[0.8, 0.8, 0.8, 1])
+    # Hollow square bucket next to boxes
+    # Parameters
+    bucket_w = 0.15     # inner width
+    wall_thickness = 0.005
+    height = 0.07
+
+    box_body = spec.worldbody.add_body(name="green_bucket", pos=[-0.8+bucket_w/2+5*wall_thickness, -0.6+bucket_w/2+5*wall_thickness, 0.59])
+    print([-0.8+bucket_w/2+5*wall_thickness, -0.6+bucket_w/2+5*wall_thickness, 0.59])
+    # Base plate
+    box_body.add_geom(
+        name="green_bucket_base",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[bucket_w/2+2*wall_thickness, bucket_w/2+2*wall_thickness, 0.005],
+        pos=[0, 0, -height],
+        rgba=[0.016, 0.82, 0.016, 1]
+    )
+
+    # Front wall
+    box_body.add_geom(
+        name="green_bucket_front",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[bucket_w/2+2*wall_thickness, wall_thickness, height],
+        pos=[0, bucket_w/2 + wall_thickness, 0],
+        rgba=[0.016, 0.82, 0.016, 1]
+    )
+
+    # Back wall
+    box_body.add_geom(
+        name="green_bucket_back",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[bucket_w/2+2*wall_thickness, wall_thickness, height],
+        pos=[0, -bucket_w/2 - wall_thickness, 0],
+        rgba=[0.016, 0.82, 0.016, 1]
+    )
+
+    # Left wall
+    box_body.add_geom(
+        name="green_bucket_left",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[wall_thickness, bucket_w/2+2*wall_thickness, height],
+        pos=[-bucket_w/2 - wall_thickness, 0, 0],
+        rgba=[0.016, 0.82, 0.016, 1]
+    )
+
+    # Right wall
+    box_body.add_geom(
+        name="green_bucket_right",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[wall_thickness, bucket_w/2+2*wall_thickness, height],
+        pos=[bucket_w/2 + wall_thickness, 0, 0],
+        rgba=[0.016, 0.82, 0.016, 1]
+    )
+    
+    red_bucket_body = spec.worldbody.add_body(name="red_bucket", pos=[0.8-bucket_w/2-5*wall_thickness, 0.6-bucket_w/2-5*wall_thickness, 0.59])
+    # Base plate
+    red_bucket_body.add_geom(
+        name="red_bucket_base",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[bucket_w/2+2*wall_thickness, bucket_w/2+2*wall_thickness, 0.005],
+        pos=[0, 0, -height],
+        rgba=[0.878, 0.047, 0.059, 1]
+    )
+
+    # Front wall
+    red_bucket_body.add_geom(
+        name="red_bucket_front",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[bucket_w/2+2*wall_thickness, wall_thickness, height],
+        pos=[0, bucket_w/2 + wall_thickness, 0],
+        rgba=[0.878, 0.047, 0.059, 1]
+    )
+
+    # Back wall
+    red_bucket_body.add_geom(
+        name="red_bucket_back",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[bucket_w/2+2*wall_thickness, wall_thickness, height],
+        pos=[0, -bucket_w/2 - wall_thickness, 0],
+        rgba=[0.878, 0.047, 0.059, 1]
+    )
+
+    # Left wall
+    red_bucket_body.add_geom(
+        name="red_bucket_left",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[wall_thickness, bucket_w/2+2*wall_thickness, height],
+        pos=[-bucket_w/2 - wall_thickness, 0, 0],
+        rgba=[0.878, 0.047, 0.059, 1]
+    )
+
+    # Right wall
+    red_bucket_body.add_geom(
+        name="red_bucket_right",
+        type=mj.mjtGeom.mjGEOM_BOX,
+        size=[wall_thickness, bucket_w/2+2*wall_thickness, height],
+        pos=[bucket_w/2 + wall_thickness, 0, 0],
+        rgba=[0.878, 0.047, 0.059, 1]
+    )
+
 
     # Find the attachment site on the robot arm and attach gripper
     s: mj.MjsSite = arm.worldbody.find_all(mj.mjtObj.mjOBJ_SITE)[0]

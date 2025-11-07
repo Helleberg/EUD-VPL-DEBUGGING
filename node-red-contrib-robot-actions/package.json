@@ -1,0 +1,18 @@
+{
+  "name": "node-red-contrib-robot-actions",
+  "version": "1.0.0",
+  "description": "Node-RED nodes for building and posting robot missions",
+  "node-red": {
+    "nodes": {
+      "initialize": "initialize.js",
+      "reset-boxes": "reset-boxes.js",
+      "move-to-position": "move-to-position.js",
+      "move-to-object": "move-to-object.js",
+      "pick-object": "pick-object.js",
+      "grasp": "grasp.js",
+      "release": "release.js",
+      "wait": "wait.js",
+      "mission-builder": "finish.js"
+    }
+  }
+}

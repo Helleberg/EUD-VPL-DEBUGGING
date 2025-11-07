@@ -1,0 +1,22 @@
+<script type="text/javascript">
+RED.nodes.registerType('move to object', {
+    category: 'robot',
+    color: '#A6BBCF',
+    defaults: {
+        name: { value: "" },
+        object_name: { value: "" }, height_offset: { value: 0.05 }
+    },
+    inputs: 1,
+    outputs: 1,
+    
+    label: function() { return "move to object"; }
+});
+</script>
+
+<script type="text/html" data-template-name="move to object">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row"><label>object_name</label><input type="text" id="node-input-object_name"></div><div class="form-row"><label>height_offset</label><input type="text" id="node-input-height_offset"></div>
+</script>

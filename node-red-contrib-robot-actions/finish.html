@@ -1,0 +1,17 @@
+<script type="text/javascript">
+RED.nodes.registerType('finish', {
+    category: 'robot',
+    color: '#C6E2A6',
+    defaults: { name: { value: "" } },
+    inputs: 1,
+    outputs: 1,
+    
+    label: function() { return "finish"; }
+});
+</script>
+<script type="text/html" data-template-name="finish">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+</script>
