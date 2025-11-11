@@ -546,8 +546,12 @@ class RobotAPI:
         """
         try:
             def _reset_free_body(body_name, pos_xyz):
-                # Get body id
-                body_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, body_name)
+                if body_name == 'red_cap' or body_name == 'red_box':
+                    print("Resetting red_cap and green_cap")
+                    mujoco.mj_resetData(self.model, self.data)
+                    return  
+                else:
+                    body_id = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, body_name)
                 # First joint for this body
                 jnt_adr = self.model.body_jntadr[body_id]
                 jnt_num = self.model.body_jntnum[body_id]
@@ -567,8 +571,8 @@ class RobotAPI:
                 self.data.qvel[qvel_adr:qvel_adr+6] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
             with self.data_lock:
-                _reset_free_body("red_box", [0.3, 0.3, 0.52])
-                _reset_free_body("blue_box", [0.5, 0.3, 0.55])
+                _reset_free_body("red_cap", [-0.4125, 0.125, 0.565125])
+                _reset_free_body("green_cap", [0.4125, 0.125, 0.565125])
                 # Recompute all dependent quantities
                 mujoco.mj_forward(self.model, self.data)
 

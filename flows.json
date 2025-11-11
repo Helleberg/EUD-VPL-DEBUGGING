@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "05a8d827293ec5ce",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-robot-actions": "1.0.0"
+        }
+    },
+    {
         "id": "9eb5dc55519d3d3f",
         "type": "initialize",
         "z": "d103939ecea1f50a",
@@ -16,7 +24,7 @@
         "y": 300,
         "wires": [
             [
-                "365d69a905b00dfd"
+                "1983db9376161d8d"
             ]
         ]
     },
@@ -53,7 +61,7 @@
         "y": 400,
         "wires": [
             [
-                "69457ac60c566c3f"
+                "1c0aec9e44f5dee5"
             ]
         ]
     },
@@ -66,7 +74,7 @@
         "y": 400,
         "wires": [
             [
-                "34964624232d8da3"
+                "fc4cdb7e6ff8fcc6"
             ]
         ]
     },
@@ -116,7 +124,7 @@
         "y": 680,
         "wires": [
             [
-                "62986eb57ac46006"
+                "51691373b97559a5"
             ]
         ]
     },
@@ -158,23 +166,6 @@
         "wires": [
             [
                 "a2dec8ea2396d778"
-            ]
-        ]
-    },
-    {
-        "id": "69457ac60c566c3f",
-        "type": "move to position",
-        "z": "d103939ecea1f50a",
-        "name": "",
-        "x_coord": "0.7",
-        "y_coord": "0.45",
-        "z_coord": "0.81",
-        "duration": "2",
-        "x": 1280,
-        "y": 400,
-        "wires": [
-            [
-                "cdfa48ed9e7fb654"
             ]
         ]
     },
@@ -230,15 +221,24 @@
         ]
     },
     {
-        "id": "62986eb57ac46006",
-        "type": "move to position",
+        "id": "1c0aec9e44f5dee5",
+        "type": "move to red bucket",
         "z": "d103939ecea1f50a",
         "name": "",
-        "x_coord": "-0.7",
-        "y_coord": "-0.45",
-        "z_coord": "0.81",
-        "duration": "2",
-        "x": 1220,
+        "x": 1270,
+        "y": 400,
+        "wires": [
+            [
+                "cdfa48ed9e7fb654"
+            ]
+        ]
+    },
+    {
+        "id": "51691373b97559a5",
+        "type": "move to green bucket",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 1200,
         "y": 680,
         "wires": [
             [
@@ -247,11 +247,16 @@
         ]
     },
     {
-        "id": "05a8d827293ec5ce",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "node-red-contrib-robot-actions": "1.0.0"
-        }
+        "id": "1983db9376161d8d",
+        "type": "reset boxes",
+        "z": "d103939ecea1f50a",
+        "name": "",
+        "x": 590,
+        "y": 360,
+        "wires": [
+            [
+                "365d69a905b00dfd"
+            ]
+        ]
     }
 ]

@@ -54,7 +54,6 @@ def init() -> tuple[mj.MjModel, mj.MjData]:
     height = 0.07
 
     box_body = spec.worldbody.add_body(name="green_bucket", pos=[-0.8+bucket_w/2+5*wall_thickness, -0.6+bucket_w/2+5*wall_thickness, 0.59])
-    print([-0.8+bucket_w/2+5*wall_thickness, -0.6+bucket_w/2+5*wall_thickness, 0.59])
     # Base plate
     box_body.add_geom(
         name="green_bucket_base",
