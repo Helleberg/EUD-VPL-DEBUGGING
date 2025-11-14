@@ -5,7 +5,7 @@ module.exports = function(RED) {
         node.on('input', function(msg) {
             const flow = node.context().flow;
             const actions = flow.get('actions') || [];
-            const action3 = {"action":"move_to_position","position":{"x_coord": 0,"y_coord": 0.7,"z_coord": 0.85},"duration": 2, "name": "red_middle"};
+            const action3 = {"action":"move_to_position","position":{"x_coord": 0,"y_coord": -0.7,"z_coord": 0.85},"duration": 2, "name": "red_middle"};
             actions.push(action3);
             if (actions.length >= 2) {
                 const oneToLast = actions[actions.length - 2]; // second last action

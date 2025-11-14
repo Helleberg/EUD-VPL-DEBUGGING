@@ -72,7 +72,7 @@
         "y": 40,
         "wires": [
             [
-                "6605ee21fd836f03"
+                "4194d4f430105c8b"
             ]
         ]
     },
@@ -385,23 +385,6 @@
         "wires": [
             [
                 "fe505b45b5877433"
-            ]
-        ]
-    },
-    {
-        "id": "6605ee21fd836f03",
-        "type": "move to position",
-        "z": "d103939ecea1f50a",
-        "name": "",
-        "x_coord": "-0.69",
-        "y_coord": "-0.48",
-        "z_coord": "0.8",
-        "duration": 1,
-        "x": 340,
-        "y": 520,
-        "wires": [
-            [
-                "fc4cdb7e6ff8fcc6"
             ]
         ]
     }
