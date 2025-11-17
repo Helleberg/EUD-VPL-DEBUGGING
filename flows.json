@@ -441,7 +441,7 @@
         "type": "finish",
         "z": "aeae891cb14daa67",
         "name": "",
-        "x": 1210,
+        "x": 1250,
         "y": 340,
         "wires": [
             []
@@ -534,7 +534,7 @@
         "y": 100,
         "wires": [
             [
-                "cd35fc6f4ef91b2f"
+                "52e8f866bcae20a2"
             ]
         ]
     },
@@ -548,19 +548,6 @@
         "wires": [
             [
                 "324c5340dc0dfb15"
-            ]
-        ]
-    },
-    {
-        "id": "cd35fc6f4ef91b2f",
-        "type": "move to red cap 3",
-        "z": "aeae891cb14daa67",
-        "name": "",
-        "x": 550,
-        "y": 160,
-        "wires": [
-            [
-                "bebe20b58255a150"
             ]
         ]
     },
@@ -690,7 +677,7 @@
         "y": 280,
         "wires": [
             [
-                "d9e96f69ca500a1d"
+                "e993373edf3b49bf"
             ]
         ]
     },
@@ -769,6 +756,19 @@
         "wires": [
             [
                 "f88778b80e6c4503"
+            ]
+        ]
+    },
+    {
+        "id": "52e8f866bcae20a2",
+        "type": "move to red cap 2",
+        "z": "aeae891cb14daa67",
+        "name": "",
+        "x": 550,
+        "y": 160,
+        "wires": [
+            [
+                "bebe20b58255a150"
             ]
         ]
     },

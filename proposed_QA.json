@@ -25,10 +25,30 @@
   },
   {
     "question": "Why did the robot move to a position instead of placing into the bucket?",
-    "answer": "In Test Case 3 the flow for one red cap uses 'move to position' instead of 'move to red bucket'. Replace it with the correct bucket target."
+    "answer": "The flow for one red cap uses 'move to position' instead of 'move to red bucket'. Replace it with the correct bucket target."
   },
   {
-    "question": "Why does the working flow succeed?",
-    "answer": "It uses a complete and correct sequence per cap: move → grasp → move to correct bucket → release, repeated for all caps before finish."
+    "question": "Why did the robot attempt to pick up the same cap twice?",
+    "answer": "Ensure that each cycle looks like this move -> grasp -> move to bucket -> release."
+  },
+  {
+    "question": "Why did the robot perform actions out of order?",
+    "answer": "Nodes may be dragged in the wrong sequence. Check that each cap uses: move → grasp → move to bucket → release in that exact order."
+  },
+  {
+    "question": "Why was the robot holding a cap when it should have been empty?",
+    "answer": "A release step may be missing or misaligned. Verify that every take operation is followed by a release before starting a new one."
+  },
+  {
+    "question": "Why did the robot move to the correct cap but skip the grasp command?",
+    "answer": "Confirm the grasp node is connected and active."
+  },
+  {
+    "question": "Why did the robot knock over caps or collide with objects?",
+    "answer": "Movement paths may not include safe clearance points. Add intermediate path nodes to avoid straight-line collisions."
+  },
+  {
+    "question": "Why is the robot not resetting properly before starting?",
+    "answer": "Ensure reset boxes node happens first after the start node."
   }
 ]

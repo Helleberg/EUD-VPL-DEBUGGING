@@ -441,7 +441,7 @@
         "type": "finish",
         "z": "aeae891cb14daa67",
         "name": "",
-        "x": 1210,
+        "x": 1250,
         "y": 340,
         "wires": [
             []
@@ -690,7 +690,7 @@
         "y": 280,
         "wires": [
             [
-                "d9e96f69ca500a1d"
+                "e993373edf3b49bf"
             ]
         ]
     },
@@ -1137,8 +1137,8 @@
         "type": "move to position",
         "z": "bb817356ff2a4ad9",
         "name": "",
-        "x_coord": "0.4",
-        "y_coord": "0.35",
+        "x_coord": "0.5",
+        "y_coord": "0.5",
         "z_coord": "0.9",
         "duration": 1,
         "x": 1080,
